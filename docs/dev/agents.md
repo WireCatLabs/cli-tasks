@@ -23,3 +23,11 @@ From a terminal, never from inside a Claude session:
 bin/check-agents                 # a headless session in bypass mode tries each item; each says what must happen
 bin/trust-folder <worktree>...   # a new worktree's .claude/settings.json is ignored until the folder is trusted
 ```
+
+## The private trail
+
+The plan, journal and decisions for this package live in max-cli's private `docs_ai`. Agents write
+them only through its worktrees (`max-cli-private-wt-*`), never in the main `docs_ai` checkout,
+which other sessions use. [`bin/allow-private-trail`](../../bin/allow-private-trail), run by the
+owner from a terminal, opens those worktrees and `max-cli/docs_ai/.git` — where each worktree's
+commits and the journal's id counter land — to the hook and the sandbox.
