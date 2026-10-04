@@ -55,16 +55,15 @@
     "enabled": true,
     "filesystem": {
       "allowWrite": [
-        "/home/leemour/Projects/AI/cli-tasks/**",
-        "/home/leemour/Projects/AI/cli-tasks-*/**",
-        "/home/leemour/Projects/AI/cli-messaging/**",
-        "/home/leemour/Projects/AI/cli-messaging-*/**",
         "/home/leemour/Projects/AI/cli-core/**",
-        "~/.local/share/pnpm/**",
-        "~/.cache/**",
-        "~/.npm/**",
+        "/home/leemour/Projects/AI/cli-messaging/**",
+        "/home/leemour/Projects/AI/cli-tasks/**",
+        "/home/leemour/Projects/AI/max-cli/docs_ai/.git/**",
         "/tmp/**",
-        "/var/tmp/claude/**"
+        "/var/tmp/claude/**",
+        "~/.cache/**",
+        "~/.local/share/pnpm/**",
+        "~/.npm/**"
       ],
       "allowRead": [
         "~/.ssh/id_ed25519.pub",
