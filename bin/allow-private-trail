@@ -1,8 +1,10 @@
 #!/usr/bin/env sh
-# Lets agents here write max-cli's private trail (journal, plans, decisions) in its worktrees,
-# never in the main docs_ai checkout. Two paths open: the max-cli-private-wt-* worktrees, and
-# docs_ai/.git, where every worktree's commits and the journal's id counter land. Agents cannot make
-# this change themselves: the guards are locked to them. Run it from a terminal, then bin/check-agents.
+# Lets agents here write max-cli's private trail (journal, plans, decisions) through a worktree kept
+# in .worktrees/ of this checkout, never in the main docs_ai checkout. That needs one more path:
+# max-cli/docs_ai/.git, where every worktree's commits and the journal's id counter land. It also drops
+# allowWrite entries with a * inside a folder name: the sandbox ignores them (measured 2026-10-04), so
+# they only claim access nobody has. Agents cannot make this change: the guards are locked to them.
+# Run it from a terminal, restart the Claude sessions here, then run bin/check-agents.
 #
 #   bin/allow-private-trail
 set -eu
@@ -11,10 +13,8 @@ cd "$(CDPATH='' cd -- "$(dirname -- "$0")/.." && pwd)"
 settings=.claude/settings.json
 hook=.claude/hooks/writes-stay-inside.sh
 next=$(mktemp)
-jq '.sandbox.filesystem.allowWrite |= (. + [
-    "/home/leemour/Projects/AI/max-cli-private-wt-*/**",
-    "/home/leemour/Projects/AI/max-cli/docs_ai/.git/**"
-  ] | unique)' "$settings" > "$next"
+jq '.sandbox.filesystem.allowWrite |= (map(select(test("[^/]\\*/") | not))
+  + ["/home/leemour/Projects/AI/max-cli/docs_ai/.git/**"] | unique)' "$settings" > "$next"
 mv "$next" "$settings"
 if ! grep -q 'max-cli-private-wt-' "$hook"; then
   anchor='"$beside"/cli-core/*) exit 0 ;;'
