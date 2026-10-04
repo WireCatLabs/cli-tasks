@@ -17,7 +17,8 @@ and max-cli. Start with the one page that covers what you are about to touch:
    SQLite, `node:fs`, Drizzle, cli-messaging and messenger libraries under `src/`.
 2. **A task never holds message text.** Only the locator. A deleted message leaves nothing here.
 3. **`cli-messaging` depends on this package, never the other way round.**
-4. **A closed task never opens again.** A rule seeing the same source returns the task it already made.
+4. **A closed task never opens again.** A rule seeing the same source returns the task it already made;
+   only a person or an agent adds a second task to a source, and only of another kind.
 5. **A change reaches tg-cli and max-cli only through a release** of this package, then of
    cli-messaging, which both CLIs pin exactly.
 

@@ -13,6 +13,7 @@ Every entry says what changed as a caller sees it, why, and what to watch for â€
 - **The task model and its rules.** A task points at its source by a locator and holds no text of
   it; it is `open`, then `done` or `dismissed`, and a closed task never opens again.
 - **`createTaskService`** adds, closes, lists and counts tasks over a `TaskStore` the host
-  implements. Adding the same source twice in one account returns the task already there, whatever
-  its state, so a rule that sees a message again makes nothing new.
+  implements. A rule that sees a source again gets the task already there, whatever its state, so
+  a dismissed task stays dismissed; a person or an agent may add a task of another kind to the same
+  source.
 - **`@leemour/cli-tasks/testing`** has `memoryTaskStore`, an in-memory `TaskStore` for tests.

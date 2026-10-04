@@ -19,7 +19,7 @@ const input = {
 } as const
 const { task } = await tasks.add(input)
 assert.equal((await tasks.add(input)).created, false)
-await tasks.dismiss(task.id, "owner", "no-reply-needed")
+await tasks.close(task.id, { as: "dismissed", by: "owner", reason: "no-reply-needed" })
 assert.equal((await tasks.add(input)).task.state, "dismissed")
 assert.equal((await tasks.stats())[0]?.open, 0)
 console.log("smoke: ok")
