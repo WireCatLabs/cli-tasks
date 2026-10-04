@@ -7,9 +7,9 @@ service are built and tested. The commands are not built yet; nothing is release
 
 | File | What |
 |---|---|
-| [`src/model.ts`](../../src/model.ts) | `Task`, its kinds, states and origins, `close` and `TaskError` |
+| [`src/model.ts`](../../src/model.ts) | `Task`, its kinds, states and origins, `closeTask` and `TaskError` |
 | [`src/store.ts`](../../src/store.ts) | `TaskStore`, the host's side, and `matches`, the filter every store applies the same way |
-| [`src/service.ts`](../../src/service.ts) | `createTaskService`: add, close, list, stats over a store |
+| [`src/service.ts`](../../src/service.ts) | `createTaskService`: add, close, list, stats over a store — one method per command (`tasks close --as done\|dismissed`) |
 | [`src/testing/`](../../src/testing/memory-store.ts) | `memoryTaskStore`, published as `/testing` |
 
 ## The two lines this package does not cross
