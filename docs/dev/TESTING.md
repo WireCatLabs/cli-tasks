@@ -33,6 +33,7 @@ least 50 % of its lines. Raise it when coverage rises; never lower it to let a c
 ## Live checks
 
 The suites never contact a messenger. [`bin/live-tasks`](../../bin/live-tasks) `tg|max`, run by the owner
-from a terminal, checks the task rules on a real test chat: the second account asks, the owner's `review`
+from a terminal, checks the task rules on a real test chat: the second account must be a different account, and joins the
+chat by its invite link if it is not a member; then it asks, the owner's `review`
 opens a task, the owner's reply closes it, and both messages are deleted by their own senders. The chats and
 profiles are in `.live/cast.env`, which git ignores; the script prints no id and no text.
