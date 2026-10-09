@@ -1,6 +1,6 @@
 # Architecture
 
-Published as `@leemour/cli-tasks`. The `tasks` commands are built in cli-messaging, which stores
+Published as `@wirecat/cli-tasks`. The `tasks` commands are built in cli-messaging, which stores
 tasks behind `TaskStore` and mounts the commands into tg-cli and max-cli.
 
 ## The modules

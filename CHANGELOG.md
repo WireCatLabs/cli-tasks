@@ -1,10 +1,19 @@
 # Changelog
 
-Notable changes to `@leemour/cli-tasks`, one section per version, newest first. Versions follow
-[semantic versioning](https://semver.org/); before `1.0.0` a minor release may change the API.
+Notable changes to `@wirecat/cli-tasks` (`@leemour/cli-tasks` up to 0.1.0), one section per version, newest
+first. Versions follow [semantic versioning](https://semver.org/); before `1.0.0` a minor release may change
+the API.
 
 Every entry says what changed as a caller sees it, why, and what to watch for — the rules are
 [`docs/dev/CONVENTIONS.md`](docs/dev/CONVENTIONS.md#the-changelog).
+
+## 0.2.0 — 10.10.2026
+
+### Changed — may break callers
+
+- **The package is now `@wirecat/cli-tasks`, and the repository is `WireCatLabs/cli-tasks`.** Install
+  `@wirecat/cli-tasks` and change imports from `@leemour/cli-tasks`. It depends on `@wirecat/cli-core`
+  0.18.1 (was `@leemour/cli-core` 0.17.0). `@leemour/cli-tasks` gets no new versions.
 
 ## 0.1.0 — 05.10.2026
 

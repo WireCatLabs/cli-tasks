@@ -1,7 +1,7 @@
 # cli-tasks — working rules
 
 Open tasks waiting on the owner — an unanswered question, a request, a mention, a promise — published
-as `@leemour/cli-tasks`. `cli-messaging` feeds it from messages and mounts its commands into tg-cli
+as `@wirecat/cli-tasks`. `cli-messaging` feeds it from messages and mounts its commands into tg-cli
 and max-cli. Start with the one page that covers what you are about to touch:
 
 - [`docs/dev/ARCHITECTURE.md`](docs/dev/ARCHITECTURE.md) — the modules, the storage seam, who consumes it.
