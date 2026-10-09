@@ -1,4 +1,4 @@
-# @leemour/cli-tasks
+# @wirecat/cli-tasks
 
 Things still waiting on you — an unanswered question, a request, a mention, a promise — kept as a list
 an agent can read and close. It knows no messenger and no database: a task points at what it is about
@@ -9,8 +9,8 @@ messages it reads and gives tg-cli and max-cli the same `tasks` commands. What c
 version is in [`CHANGELOG.md`](CHANGELOG.md).
 
 ```ts
-import { createTaskService } from "@leemour/cli-tasks"
-import { memoryTaskStore } from "@leemour/cli-tasks/testing"
+import { createTaskService } from "@wirecat/cli-tasks"
+import { memoryTaskStore } from "@wirecat/cli-tasks/testing"
 
 const tasks = createTaskService({ store: memoryTaskStore() })
 const question = {

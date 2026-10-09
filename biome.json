@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
-  "extends": ["@leemour/cli-core/biome"],
+  "extends": ["@wirecat/cli-core/biome"],
   "files": {
     "includes": ["**", "!**/dist", "!**/node_modules", "!pnpm-lock.yaml", "!.claude/settings.json"]
   },
@@ -25,8 +25,8 @@
                       "better-sqlite3",
                       "drizzle-orm",
                       "drizzle-orm/*",
-                      "@leemour/cli-messaging*",
-                      "@leemour/cli-messaging*/**"
+                      "@wirecat/cli-messaging*",
+                      "@wirecat/cli-messaging*/**"
                     ],
                     "message": "cli-tasks stores nothing itself and knows no messenger: the host implements TaskStore and resolves a locator"
                   },
