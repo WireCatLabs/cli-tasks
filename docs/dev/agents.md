@@ -1,9 +1,8 @@
 # Running agents on cli-tasks
 
-Status 2026-10-04: the guards are copied from tg-cli's
+The guards are copied from tg-cli's
 [`docs/dev/agents.md`](https://github.com/leemour/tg-cli/blob/main/docs/dev/agents.md), where each was
-measured. Here the two hooks were run by hand, and the checks in [TESTING.md](TESTING.md) passed inside
-the sandbox once these settings took effect; `bin/check-agents` has not been run yet.
+measured; `bin/check-agents` proves they hold here.
 
 ## What an agent may do, and what stops it
 

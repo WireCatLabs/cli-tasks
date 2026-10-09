@@ -1,7 +1,7 @@
 # Architecture
 
-Status 2026-10-04: the model, the state rule, the storage interface, the in-memory store and the
-service are built and tested. The commands are not built yet; nothing is released.
+Published as `@leemour/cli-tasks`. The `tasks` commands are built in cli-messaging, which stores
+tasks behind `TaskStore` and mounts the commands into tg-cli and max-cli.
 
 ## The modules
 

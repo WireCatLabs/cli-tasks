@@ -8,7 +8,6 @@ and max-cli. Start with the one page that covers what you are about to touch:
 - [`docs/dev/CONVENTIONS.md`](docs/dev/CONVENTIONS.md) — the shared conventions, and what differs here.
 - [`docs/dev/TESTING.md`](docs/dev/TESTING.md) — the checks and the coverage floor.
 - [`docs/dev/agents.md`](docs/dev/agents.md) — what an agent may change here, and what stops it.
-- The plan is private, in max-cli's `docs_ai/plans/2026-10-04-group-monitoring-tasks.md`, with its handoff beside it.
 
 ## The constraints that shape everything
 
