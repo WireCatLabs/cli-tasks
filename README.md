@@ -4,7 +4,7 @@ Things still waiting on you — an unanswered question, a request, a mention, a 
 an agent can read and close. It knows no messenger and no database: a task points at what it is about
 by a locator, and the host stores the tasks.
 
-Used by [`cli-messaging`](https://github.com/leemour/cli-messaging), which adds tasks from the
+Used by [`cli-messaging`](https://github.com/WireCatLabs/cli-messaging), which adds tasks from the
 messages it reads and gives tg-cli and max-cli the same `tasks` commands. What changed in each
 version is in [`CHANGELOG.md`](CHANGELOG.md).
 
