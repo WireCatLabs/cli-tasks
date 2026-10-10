@@ -7,7 +7,7 @@ the API.
 Every entry says what changed as a caller sees it, why, and what to watch for — the rules are
 [`docs/dev/CONVENTIONS.md`](docs/dev/CONVENTIONS.md#the-changelog).
 
-## Unreleased
+## 0.3.0 — 10.10.2026
 
 ### Added
 
