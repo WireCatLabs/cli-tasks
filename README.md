@@ -33,7 +33,7 @@ await tasks.add(question) // { task: <the same task, still dismissed>, created: 
 |---|---|
 | `Task` | the source locator, the account, a group key for listing, `kind`, `state`, `origin`, the times — never the text it points at |
 | `closeTask` | the one state rule: an `open` task becomes `done` or `dismissed`, and a closed one stays closed |
-| `TaskStore` | what the host implements: get, the tasks on one source, insert, update, list |
+| `TaskStore` | what the host implements: get, the tasks on one source, insert, update, list, a question's answer, the owner's verdict (`TASK_VERDICTS`) |
 | `createTaskService` | `add`, `close`, `list`, `stats`. A rule makes at most one task per source in an account; a person or an agent may add one of another kind |
 | `/testing` | `memoryTaskStore` |
 

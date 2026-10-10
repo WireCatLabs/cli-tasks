@@ -9,6 +9,18 @@ Every entry says what changed as a caller sees it, why, and what to watch for â€
 
 ## Unreleased
 
+### Added
+
+- `TASK_VERDICTS` (`useful`, `not_useful`) and the `TaskVerdict` type: the owner's judgement of a task a rule or
+  an agent raised, so a host and its callers share one list.
+
+### Changed â€” may break callers
+
+- **`TaskStore` gains `answer(id, { resolution, by? })` and `judge(id, verdict | null)`.** The shared store keeps
+  a question's answer and the owner's verdict; the port now says so, matching cli-messaging's `StoreTaskStore`.
+  A host that implements `TaskStore` must add both; `memoryTaskStore` has them. `Task` is unchanged: neither the
+  answer nor the verdict is read back through the port yet.
+
 ### Security
 
 - Fast secret checks remain on PRs; source, production dependency and workflow security checks run before publication. Automatic Socket checks are disabled.
