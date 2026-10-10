@@ -9,7 +9,7 @@ Every entry says what changed as a caller sees it, why, and what to watch for â€
 
 ## 0.3.1 â€” 11.10.2026
 
-### Changed
+### Fixed
 
 - Package references, documentation and fixtures use the WireCat namespace throughout.
 
