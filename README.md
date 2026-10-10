@@ -45,4 +45,4 @@ npm already has the version, it commits the next free one and publishes that.
 
 ## Licence
 
-MIT.
+[Apache License 2.0](LICENSE).
