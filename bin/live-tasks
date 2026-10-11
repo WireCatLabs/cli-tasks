@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
-# A live check of the task rules on a real test chat: the second account asks a question, the owner's
+# A live check of the task rules on a real test chat: the second account joins the chat by its invite link
+# if it is not a member yet, then asks a question, the owner's
 # review opens a task, the owner's reply closes it on the next review. Both messages are deleted after,
 # each by its own sender with the id its own send returned. Run it from a terminal, with the owner's yes.
 #
@@ -57,6 +58,26 @@ trap cleanup EXIT
 
 step() { printf '%-40s' "$1"; }
 fail() { echo "FAIL ($1)"; exit 1; }
+
+step "two different accounts"
+out=$("$cli" "$owner" account show --json) || fail "$owner: exit $?"
+owner_id=$(printf '%s' "$out" | jq -r '.id')
+out=$("$cli" "$second" account show --json) || fail "$second: exit $?"
+second_id=$(printf '%s' "$out" | jq -r '.id')
+# The owner's own question opens no task, so the run would fail three steps later without saying why.
+[ "$owner_id" != "$second_id" ] || fail "$owner and $second are the same account"
+echo "ok"
+
+step "second account is in the chat"
+out=$("$cli" "$owner" chats members list "$chat" --all --json) || fail "exit $?"
+if printf '%s' "$out" | jq -e --arg id "$second_id" 'any(.items[]; .id == $id)' >/dev/null; then
+  echo "ok"
+else
+  out=$("$cli" "$owner" chats link show "$chat" --json) || fail "no invite link: exit $?"
+  link=$(printf '%s' "$out" | jq -r '.link')
+  "$cli" "$second" chats join "$link" --json >/dev/null || fail "join: exit $?"
+  echo "ok, joined by the invite link"
+fi
 
 step "second account asks"
 out=$("$cli" "$second" messages send "$chat" "live-check $stamp: who has the keys? (test, deleted after)" --json) || fail "exit $?"
